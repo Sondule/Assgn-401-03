@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .maindiv{
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+        .maindiv img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        .child-left{
+            position: absolute;
+            top: 45%;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-right: 30px solid rgb(255, 255, 255);
+            border-bottom: 20px solid transparent;
+        }
+        .child-right{
+            position: absolute;
+            top: 45%;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-top: 20px solid transparent;
+            border-left: 30px solid rgb(255, 255, 255);
+            border-bottom: 20px solid transparent;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="left()">left click</button> -->
+    <div class="maindiv">
+        <img src="" alt="" id="Change-img">
+        <button onclick="left()"><div class="child-left"></div></button>
+        <button onclick="right()"><div class="child-right"></div></button>
+    </div>
+    <!-- <button onclick="right()">right click</button> -->
+</body>
+<!-- ******JS*********** -->
+<script>
+     let arr=[
+        "geek01.jpeg","geek02.jpeg","geek03.jpeg"
+    ]
+    let img=document.getElementById("Change-img");
+    img.src=arr[1];
+    let i=1;
+    function left(){
+        if(0<i){
+            i--;
+            img.src=arr[i];
+            
+        }
+        else{
+            i=3;
+        }
+    }
+    function right(){
+        if(i<2){
+            i++;
+            // console.log(i,'right');
+            img.src=arr[i];
+            
+        }
+        else{
+            i=0;
+        }
+    }
+
+</script>
+
+</html>
